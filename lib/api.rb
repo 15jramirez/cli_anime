@@ -6,7 +6,7 @@ class Api
          response = Net::HTTP.get(uri)
          anime_results = JSON.parse(response)["results"]
          anime_results.each do |showings|
-           Anime.new(name:showings["title"], anime_id:showings["mal_id"],anime_search:anime_search, results:Array.new)
+           Anime.new(name:showings["title"], anime_id:showings["mal_id"],anime_search:anime_search)
          end
     end
 
