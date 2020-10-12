@@ -7,4 +7,3 @@
  
 
 ##LICENSE 
-here's a link to the license of use: 
