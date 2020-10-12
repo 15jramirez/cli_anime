@@ -7,7 +7,8 @@ class Cli
      input = gets.strip.downcase
      while input != "exit" do 
        if input == "list"
-             print_animes_list(Anime.find_by_anime(@anime))
+             print_animes_list(Anime.find_by_anime(@anime_search))
+             binding.pry
              puts ""
        elsif input.to_i > 0 && input.to_i <= Anime.all.length
         anime_picked = Anime.find_by_anime(@anime_search)[input.to_i-1] 
@@ -28,14 +29,14 @@ class Cli
    
     def print_animes_list(an_f)   #putting in the your instance of animes_found
         puts "Here are your results of #{@anime_search}: "
-        an_f.sort_by{|show| show.name}.map.with_index(1) do |a,i|
-          puts "#{i}. #{a.name}"
+        an_f.each_with_index do |a, i|
+          puts "#{i+1}. #{a.name}"
         end
     end
 
     def print_anime (anime_picked)
-      puts ""
-      puts "(　･ω･)☞ #{anime_picked.name} About:"
+      puts "~~~~~~~ ABOUT~~~~~~~~~~"
+      puts "#{anime_picked.name} "
       puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
       puts "Japansese name: #{anime_picked.title_japansese}"
       puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
