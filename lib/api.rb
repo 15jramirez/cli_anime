@@ -6,17 +6,20 @@ class Api
          response = Net::HTTP.get(uri)
          anime_results = JSON.parse(response)["results"]
          anime_results.each do |showings|
-             Anime.new(name:showings["title"], anime_id:showings["mal_id"], anime_search: anime_search)
-            
+           Anime.new(name:showings["title"], anime_id:showings["mal_id"],anime_search:anime_search, results:Array.new)
          end
-
     end
 
     def self.get_anime_details(anime_picked)
         url = "https://api.jikan.moe/v3/anime/#{anime_picked.anime_id}"
         uri = URI(url)
         response = Net::HTTP.get(uri)
-        anime_picked = JSON.parse(response)
-        binding.pry
+         data = JSON.parse(response)
+         anime_picked.synopsis = data["synopsis"]
+         anime_picked.title_japansese = data["title_japanese"]
+         anime_picked.rank = data["rank"] 
+         anime_picked.episodes = data["episodes"]
+         anime_picked.status = data["status"]
+        
     end
 end
