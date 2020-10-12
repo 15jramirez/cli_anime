@@ -8,7 +8,6 @@ class Cli
      while input != "exit" do 
        if input == "list"
              print_animes_list(Anime.find_by_anime(@anime_search))
-             binding.pry
              puts ""
        elsif input.to_i > 0 && input.to_i <= Anime.all.length
         anime_picked = Anime.find_by_anime(@anime_search)[input.to_i-1] 
