@@ -6,4 +6,3 @@
  Also if needed install the gem pry to help debug if you plan to use this for a bigger project. 
  
 
-##LICENSE 
