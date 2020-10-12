@@ -9,4 +9,8 @@
  
  All pull request are welcome and major changes please dicuss ahead of time
  
+ ## LICENSE 
+ 
+ This is available for open source via the terms General Terms of Public Licence (LICENSE)
+ 
 
