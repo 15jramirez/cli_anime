@@ -3,6 +3,10 @@
  
  ## Install Instructions
  Just fork and clone this to your own git hub and run 'ruby bin/start'
- Also if needed install the gem pry to help debug if you plan to use this for a bigger project. 
+ Also if needed install the gem pry to help debug if you plan to use this for a bigger project.
+ 
+ ## Contribution
+ 
+ All pull request are welcome and major changes please dicuss ahead of time
  
 
