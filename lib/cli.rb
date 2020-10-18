@@ -11,7 +11,7 @@ class Cli
              puts ""
        elsif input.to_i > 0 && input.to_i <= Anime.all.length
         anime_picked = Anime.find_by_anime(@anime_search)[input.to_i-1] 
-        Api.get_anime_details(anime_picked)
+        Anime.picked(anime_picked)
         print_anime(anime_picked)
        elsif input == "search"
         prompt_search
@@ -62,9 +62,9 @@ class Cli
     puts ""
      @anime_search = gets.strip.downcase
      puts ""
-     Api.fetch_show(@anime_search)
+     animes_found = Anime.find_by_anime(@anime_search)
      puts ""
-     animes_found = Anime.find_by_anime(@anime_search) 
+    
      print_animes_list(animes_found)
     end
 end
