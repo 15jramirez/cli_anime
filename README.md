@@ -2,7 +2,7 @@
  Welcome to my cli_anime. This is a dierectory for anime shows and movies. It gathers infromation from the unoffical api myanimelist by Jikan (https://api.jikan.moe/v3)
  
  ## Install Instructions
- Just fork and clone this to your own git hub and run 'ruby bin/start'
+ Just fork and clone this to your own git hub and run 'bin/start'
  Also if needed install the gem pry to help debug if you plan to use this for a bigger project.
  
  ## Contribution
